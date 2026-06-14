@@ -1,0 +1,214 @@
+/* GLOBAL THEME */
+body { margin: 0; font-family: 'Inter', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
+nav { display: flex; justify-content: space-between; padding: 20px 5%; align-items: center; border-bottom: 1px solid #222; background: #000;}
+
+/* SLIDER BASE */
+.slider-container { position: relative; width: 100%; height: 450px; overflow: hidden; background: #000; z-index: 10; }
+.slides { height: 100%; width: 100%; position: relative; }
+
+/* FIX: Changed from display:none to opacity:0 to allow transition fading and prevent JS rendering cuts */
+.slide { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    opacity: 0;
+    pointer-events: none;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    top: 0; 
+    left: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* FIX: Toggles full visibility smoothly via active class */
+.slide.active { 
+    opacity: 1; 
+    pointer-events: auto;
+}
+
+/* TARGET SPECIFIC IMAGE BEHAVIOR TO PREVENT BANNER DISTORTION */
+.slide > img { max-width: 80%; max-height: 80%; object-fit: contain; }
+
+/* BANNER 1 SPECIFIC (Neon Pink Design) */
+.neon-pink { 
+    color: #ff4db8; font-size: 2.8rem; font-weight: 900; text-transform: uppercase; 
+    text-shadow: 0 0 10px #ff4db8, 0 0 20px rgba(255, 77, 184, 0.5); 
+    margin-bottom: 30px; z-index: 10; 
+}
+.logo-collage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 80%; z-index: 5; }
+.white-box { background: #fff; padding: 15px; height: 100px; border-radius: 8px; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+.white-box:hover { transform: scale(1.05); }
+.white-box img { max-width: 100% !important; max-height: 100% !important; object-fit: contain; }
+
+/* --- BANNER 2 SPECIFIC (ADIDAS X RANVEER) --- */
+.banner-grid-layout { display: grid; grid-template-columns: 1fr 1.2fr 1.5fr; height: 100%; width: 100%; }
+.banner-col { height: 100%; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+.banner-col img { width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none; }
+.adidas-text-content { padding-left: 40px; position: relative; text-align: left; background: #000; }
+.adidas-text-content h2, .adidas-text-content h1, .adidas-text-content p { color: #8b5e3c; text-transform: uppercase; margin: 5px 0; }
+.sub-intro { font-size: 1.2rem; letter-spacing: 2px; }
+.main-celeb { font-size: 2.5rem; font-weight: 900; }
+.shoe-model { font-size: 4rem; font-weight: 900; line-height: 1; }
+.status-tag { font-size: 1.8rem; opacity: 0.9; }
+.man-watermark { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 15rem; font-weight: 900; color: rgba(255, 255, 255, 0.03); z-index: -1; pointer-events: none; }
+
+/* --- BANNER 3 SPECIFIC (PUMA X RCB) --- */
+.banner-3-puma { background-color: #000; width: 100%; height: 100%; }
+.puma-grid { display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; height: 100%; width: 100%; align-items: center; }
+.puma-col-text { padding: 20px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
+.offer-text { color: #fff; font-weight: bold; font-size: 1.1rem; margin-bottom: 20px; }
+.puma-logo-box { background: #fff; padding: 10px; width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; }
+.puma-logo-box img { max-width: 90% !important; max-height: 90% !important; object-fit: contain; }
+.puma-col-red img, .puma-col-shoes img { width: 100%; height: 450px; object-fit: cover; max-width: none; max-height: none; }
+
+/* Banner 4 Specific */
+.banner-4-nike { background-color: #ff0000; width: 100%; height: 100%; }
+.nike-pegasus-layout { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100%; padding: 0 5%; }
+.pegasus-text-left { text-align: left; z-index: 10; }
+.available-script { font-family: 'Brush Script MT', cursive; font-size: 3rem; color: #000; margin: 0; }
+.to-shop { font-family: 'Brush Script MT', cursive; font-size: 2.5rem; color: #000; margin: 0; }
+.pegasus-main { flex: 1; display: flex; justify-content: center; align-items: center; }
+.pegasus-main img { width: 95% !important; height: auto !important; max-width: none !important; max-height: none !important; object-fit: contain; }
+
+/* Banner 5 Specific */
+.banner-5-fila { background-color: #000; width: 100%; height: 100%; }
+.fila-split-layout { display: grid; grid-template-columns: 1.2fr 1fr; height: 100%; width: 100%; align-items: center; }
+.fila-col-img { height: 100%; overflow: hidden; }
+.fila-col-img img { width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none; }
+.fila-col-text { padding: 40px; text-align: center; }
+.fila-banner-logo { width: 200px !important; height: auto !important; margin-bottom: 20px; }
+.fila-discount { font-size: 3.5rem; font-weight: 900; margin: 10px 0; color: #fff; }
+.fila-brand-name { font-size: 2.5rem; font-weight: 700; margin: 5px 0; }
+.fila-date { font-size: 2rem; color: #fff; }
+
+/* Banner 6 Specific */
+.banner-6-nb { background-color: #000; width: 100%; height: 100%; }
+.nb-grid-layout { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; height: 100%; width: 100%; align-items: center; padding: 0 5%; }
+.nb-card { text-align: center; }
+.nb-card img { background: #fff; padding: 20px; width: 100%; max-width: 320px; height: auto; object-fit: contain; }
+.nb-card h3 { font-size: 2rem; margin: 15px 0 5px; color: #fff; }
+.nb-card p { font-size: 1.8rem; font-weight: bold; color: #fff; margin: 0; }
+.nb-center-logo { width: 120px !important; height: auto !important; background: #fff; padding: 15px; }
+
+/* Banner 7 Specific */
+.banner-7-reebok { background-color: #000; width: 100%; height: 100%; }
+.reebok-split-layout { display: flex; align-items: center; justify-content: center; height: 100%; width: 100%; gap: 50px; }
+.reebok-col-box img { height: 380px; width: auto; object-fit: contain; }
+.reebok-col-promo { text-align: center; }
+.promo-title { font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+.promo-subtitle { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+.reebok-brand-box { background: #fff; padding: 15px 30px; display: inline-block; }
+.reebok-brand-box img { width: 250px !important; height: auto !important; display: block; }
+
+/* Banner 8 Specific */
+.banner-8-asics { background-color: #d1d5db; width: 100%; height: 100%; }
+.asics-split-layout { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100%; padding: 0 8%; }
+.asics-col-shoes { height: 100%; flex: 1.2; }
+.asics-col-shoes img { height: 100% !important; width: auto !important; object-fit: contain; max-width: none !important; max-height: none !important; }
+.asics-col-info { flex: 1; text-align: center; color: #000; }
+.asics-small-text { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 0; }
+.gel-title { font-size: 5rem; font-weight: 900; margin: 10px 0; }
+.asics-btn { padding: 12px 40px; background: #000; color: #fff; border-radius: 30px; border: none; font-weight: bold; cursor: pointer; margin-bottom: 30px; }
+.asics-banner-logo { width: 250px !important; height: auto !important; filter: none !important; }
+
+/* Banner 9 Specific (Under Armour) */
+.banner-9-ua { background-color: #000; width: 100%; height: 100%; }
+.ua-grid-container { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 20px 5%; }
+.ua-main-content { display: grid; grid-template-columns: 1.5fr 1.2fr 1fr; gap: 15px; height: 320px; align-items: center; }
+.ua-col img { width: 100% !important; height: 100% !important; object-fit: cover !important; max-width: none !important; max-height: none !important; }
+.ua-stack { display: flex; flex-direction: column; gap: 10px; height: 100%; }
+.ua-stack img { height: calc(50% - 5px) !important; width: 100% !important; object-fit: cover !important; }
+.ua-mini-logo { background: #000; padding: 10px; object-fit: contain !important; filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(20deg); }
+.ua-footer-text { text-align: right; padding-top: 10px; }
+.neon-available { color: #ccff00; font-size: 3rem; font-weight: 900; margin: 0; letter-spacing: 2px; }
+
+/* --- SLIDER DOTS TRACK BLOCK --- */
+.dots-block-fixed {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 25px auto;
+    width: 100%;
+    z-index: 20;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.dot.active {
+    background: #ff4db8; /* Pink layout tracker accent matching layout mockup screenshot */
+}
+
+/* --- DYNAMIC SHOP BY BRAND CONTAINER BOX GRID --- */
+.section-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.brand-grid-fixed {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forms 4 accurate vertical grid columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.brand-card {
+    background-color: #000000;
+    border: 1px solid #1c1c1c; /* Forms fine layout border outlines around boxes */
+    border-radius: 6px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.brand-card:hover {
+    border-color: #333333;
+    background-color: #050505;
+}
+
+/* White graphic card wrappers */
+.brand-logo-wrapper {
+    background-color: #ffffff;
+    width: 135px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+.brand-logo-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.brand-name {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
